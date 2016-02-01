@@ -13,3 +13,13 @@ person {
 	padding: 5px;
 	text-align: center;
 }
+
+/*For every even numbered element, have a light yellow background.*/
+person:nth-child(even) {  
+  background-color: lightyellow;
+}
+
+/*For every odd numbered element, have a light blue background.*/
+person:nth-child(odd) {  
+  background-color: lightblue;
+}
