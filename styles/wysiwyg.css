@@ -1,0 +1,15 @@
+img {
+	height: 200px;
+}
+
+person {
+	display: block;
+	width: 30%;
+	float: left;
+	margin-right: 1%;
+	margin-bottom: 1%;
+	min-height: 450px;
+	border: 2px solid gray;
+	padding: 5px;
+	text-align: center;
+}
