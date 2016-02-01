@@ -61,10 +61,20 @@ function addPeople() {
 // Populate the famousPeople DIV:
 addPeople();
 
-// Each element's DOM structure should be as shown below.
 // When you click on one of the person elements, a dotted border should appear around it.
 // When you click on one of the person elements, the text input should immediately gain focus so 
 // that you can start typing.
+var personCards = document.getElementsByTagName("person");
+
+var clickPerson = function() {
+	console.log("clicked");
+}
+
+for (var i = 0; i < personCards.length; i++) {
+	personCards[i].addEventListener("click", clickPerson);
+};
+
+
 // When there is a highlighted person element, and you begin typing in the input box, the person's 
 // biography should be immediately bound to what you are typing, letter by letter.
 // When you press the enter/return key when typing in the input field, then the content of the input 
