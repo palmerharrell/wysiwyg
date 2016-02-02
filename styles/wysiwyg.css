@@ -2,6 +2,10 @@ img {
 	height: 200px;
 }
 
+input {
+	margin-bottom: 10px;
+}
+
 person {
 	display: block;
 	width: 30%;
@@ -9,7 +13,6 @@ person {
 	margin-right: 1%;
 	margin-bottom: 1%;
 	min-height: 450px;
-	border: 2px solid gray;
 	padding: 5px;
 	text-align: center;
 }
@@ -22,4 +25,19 @@ person:nth-child(even) {
 /*For every odd numbered element, have a light blue background.*/
 person:nth-child(odd) {  
   background-color: lightblue;
+}
+
+.bioInput {
+	padding: 5px;
+	text-align: center;
+}
+
+label {
+	margin-left: -30px;
+}
+
+.selected {
+	border: 2px dotted royalblue;
+	margin-right: 0.5%;
+	margin-bottom: 0.5%;
 }

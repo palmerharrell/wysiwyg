@@ -1,5 +1,3 @@
-// Instructions
-
 // Create an array of objects that represents famous people (see structure below).
 var people = [
 	{
@@ -55,6 +53,8 @@ var people = [
 ];
 
 var famousPeopleContainer = document.getElementById("famousPeople");
+var personCards = document.getElementsByTagName("person");
+var bioInput = document.getElementById("bioInput");
 
 function addPeople() {
 	var htmlString = '';
@@ -68,18 +68,19 @@ function addPeople() {
 	famousPeopleContainer.innerHTML = htmlString;
 }
 
-// Populate the famousPeople DIV:
+// Populate the famousPeople DIV with the objects from the people array
 addPeople();
 
-// When you click on one of the person elements, a dotted border should appear around it.
-// When you click on one of the person elements, the text input should immediately gain focus so 
-// that you can start typing.
-var personCards = document.getElementsByTagName("person");
-
+// When a person card is clicked, toggle border and change focus to text input
 var clickPerson = function() {
-	console.log("clicked");
+	for (var i = 0; i < personCards.length; i++) {
+		personCards[i].classList.remove("selected");
+	};
+	this.classList.add("selected");
+	bioInput.focus();
 }
 
+// Add clickPerson function to click event on each card
 for (var i = 0; i < personCards.length; i++) {
 	personCards[i].addEventListener("click", clickPerson);
 };
