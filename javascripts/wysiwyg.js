@@ -54,6 +54,7 @@ var people = [
 
 var famousPeopleContainer = document.getElementById("famousPeople");
 var personCards = document.getElementsByTagName("person");
+var selectedCard = document.getElementsByClassName("selected");
 var bioInput = document.getElementById("bioInput");
 
 function addPeople() {
@@ -61,7 +62,7 @@ function addPeople() {
 	for (var i = 0; i < people.length; i++) {
 		htmlString += '<person><header>';
 		htmlString += people[i].name + ', ' + people[i].title + '</header>';
-		htmlString += '<section><p>' + people[i].bio + '</p><img src="' + people[i].image + '">';
+		htmlString += '<section><p class="bio">' + people[i].bio + '</p><img src="' + people[i].image + '">';
 		htmlString += '</section><footer><p>Birth: ' + people[i].lifespan.birth + '</p>';
 		htmlString += '<p>Death: ' + people[i].lifespan.death + '</p></footer></person>';
 	};
@@ -85,11 +86,15 @@ for (var i = 0; i < personCards.length; i++) {
 	personCards[i].addEventListener("click", clickPerson);
 };
 
-
 // When there is a highlighted person element, and you begin typing in the input box, the person's 
 // biography should be immediately bound to what you are typing, letter by letter.
 // When you press the enter/return key when typing in the input field, then the content of the input 
 // field should immediately be blank.
 
-
-
+bioInput.addEventListener("keyup", function(event){
+	if (event.keyCode == '13') {
+		bioInput.value = "";
+	} else {
+		selectedCard[0].getElementsByClassName("bio")[0].innerHTML = bioInput.value;
+	}
+});
